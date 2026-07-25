@@ -1,0 +1,30 @@
+name: Generate a MoneyPrinterTurbo video
+description: Add one trusted video job to the Colab queue
+title: "[Video] "
+labels:
+  - video-job
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit one JSON object. The Colab worker processes jobs created by its allowlisted GitHub users.
+  - type: textarea
+    id: job
+    attributes:
+      label: Video job
+      description: Keep `video_subject`. Other fields use the MoneyPrinterTurbo API names.
+      value: |
+        ```json
+        {
+          "video_subject": "Vijf tips voor een betere nachtrust",
+          "video_language": "nl",
+          "video_aspect": "9:16",
+          "video_source": "pexels",
+          "video_count": 1,
+          "voice_name": "nl-NL-ColetteNeural",
+          "subtitle_enabled": true,
+          "bgm_type": "random"
+        }
+        ```
+    validations:
+      required: true
